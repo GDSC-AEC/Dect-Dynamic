@@ -65,3 +65,7 @@ async def NCommittee():
     # --------------------------------------------------------------------------------------
     x = sheet.col_values(4)
     return x
+
+@app.get("")
+async def hello_world():
+    return "Hello"

@@ -20,7 +20,7 @@ async def OCommittee():
     sheet = client.open_by_key("1jGMF0OBt8x20C8eLX9u6Qx8sADyy870kLyxE0HO_U2g").sheet1
     # --------------------------------------------------------------------------------------
     x = sheet.col_values(1)
-    return json.dumps(x)
+    return x
 
 
 @app.get("/steering")
@@ -36,7 +36,7 @@ async def SCommittee():
     sheet = client.open_by_key("1jGMF0OBt8x20C8eLX9u6Qx8sADyy870kLyxE0HO_U2g").sheet1
     # --------------------------------------------------------------------------------------
     x = sheet.col_values(2)
-    return json.dumps(x)
+    return x
 
 
 @app.get("/international")
@@ -52,7 +52,7 @@ async def ICommittee():
     sheet = client.open_by_key("1jGMF0OBt8x20C8eLX9u6Qx8sADyy870kLyxE0HO_U2g").sheet1
     # --------------------------------------------------------------------------------------
     x = sheet.col_values(3)
-    return json.dumps(x)
+    return x
 
 
 @app.get("/national")
@@ -68,4 +68,4 @@ async def NCommittee():
     sheet = client.open_by_key("1jGMF0OBt8x20C8eLX9u6Qx8sADyy870kLyxE0HO_U2g").sheet1
     # --------------------------------------------------------------------------------------
     x = sheet.col_values(4)
-    return json.dumps(x)
+    return x

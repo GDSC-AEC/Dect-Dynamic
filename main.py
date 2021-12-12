@@ -2,10 +2,19 @@ from fastapi import FastAPI
 import json
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 arr = []
+origins = ["*"]
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/organizing")
 async def OCommittee():

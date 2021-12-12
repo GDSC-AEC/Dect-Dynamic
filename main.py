@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+import json
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
@@ -19,7 +20,8 @@ async def OCommittee():
     sheet = client.open_by_key("1jGMF0OBt8x20C8eLX9u6Qx8sADyy870kLyxE0HO_U2g").sheet1
     # --------------------------------------------------------------------------------------
     x = sheet.col_values(1)
-    return x
+    return json.dumps(x)
+
 
 @app.get("/steering")
 async def SCommittee():
@@ -34,7 +36,8 @@ async def SCommittee():
     sheet = client.open_by_key("1jGMF0OBt8x20C8eLX9u6Qx8sADyy870kLyxE0HO_U2g").sheet1
     # --------------------------------------------------------------------------------------
     x = sheet.col_values(2)
-    return x
+    return json.dumps(x)
+
 
 @app.get("/international")
 async def ICommittee():
@@ -49,7 +52,8 @@ async def ICommittee():
     sheet = client.open_by_key("1jGMF0OBt8x20C8eLX9u6Qx8sADyy870kLyxE0HO_U2g").sheet1
     # --------------------------------------------------------------------------------------
     x = sheet.col_values(3)
-    return x
+    return json.dumps(x)
+
 
 @app.get("/national")
 async def NCommittee():
@@ -64,8 +68,4 @@ async def NCommittee():
     sheet = client.open_by_key("1jGMF0OBt8x20C8eLX9u6Qx8sADyy870kLyxE0HO_U2g").sheet1
     # --------------------------------------------------------------------------------------
     x = sheet.col_values(4)
-    return x
-
-@app.get("")
-async def hello_world():
-    return "Hello"
+    return json.dumps(x)

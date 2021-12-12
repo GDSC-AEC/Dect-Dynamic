@@ -1,11 +1,10 @@
 from fastapi import FastAPI
-import json
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
-arr = []
+
 origins = ["*"]
 
 app.add_middleware(
